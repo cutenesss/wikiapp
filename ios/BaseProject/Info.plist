@@ -83,11 +83,11 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Ứng dụng cần truy cập vị trí của bạn để thực hiện chấm công</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Ứng dụng cần truy cập vị trí của bạn để thực hiện chấm công</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Ứng dụng cần truy cập vị trí của bạn để thực hiện chấm công</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Ứng dụng cần truy cập vị trí của bạn để thực hiện chấm công</string>
 	<key>UIAppFonts</key>
 	<array>

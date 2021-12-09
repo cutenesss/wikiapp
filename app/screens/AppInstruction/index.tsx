@@ -8,12 +8,12 @@ import AntDesign from "react-native-vector-icons/AntDesign"
 
 import { translate } from "@i18n"
 import R from "@assets/R"
+import { WIDTH } from "@configs/functions"
+import { reset } from "@navigation/navigation-service"
+import ScreenName from "@navigation/screen-name"
 
 import PageContent from "./Item/PageContent"
 import PageIndicator from "./Item/PageIndicator"
-import { WIDTH } from "@configs/functions"
-import { navigate } from "@navigation/navigation-service"
-import ScreenName from "@navigation/screen-name"
 
 const DATA_PAGE = [
   {
@@ -49,8 +49,8 @@ const AppInstruction = () => {
 
   const onChangePage = (value: boolean) => {
     const change = value ? 1 : -1
-    if (currentPage === DATA_PAGE.length) {
-      navigate(ScreenName.Home)
+    if (currentPage === DATA_PAGE.length - 1) {
+      reset(ScreenName.Home)
     } else {
       setCurrentPage((page) => page + change)
       viewPager.current.setPage(currentPage + change)

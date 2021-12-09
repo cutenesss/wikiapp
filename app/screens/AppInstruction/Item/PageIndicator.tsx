@@ -41,7 +41,7 @@ const PageIndicator = (props: PageIndicatorProps) => {
 
 const ButtonAction = ({ onPress, title }) => (
   <TouchableOpacity onPress={onPress} activeOpacity={0.7} style={styles.btn}>
-    <Text category="h3" style={styles.txt}>
+    <Text category="p1" style={styles.txt}>
       {title}
     </Text>
   </TouchableOpacity>

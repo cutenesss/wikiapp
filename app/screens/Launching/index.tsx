@@ -47,7 +47,7 @@ const Launching = (props: Props) => {
       // console.log("userCheck_userCheck", userData)
       if (isFirstOpen === null) {
         screenName = ScreenName.AppInstruction
-        // await AsyncStorageUtils.save(AsyncStorageUtils.KEY.FIRST_OPEN_APP, "Ok")
+        await AsyncStorageUtils.save(AsyncStorageUtils.KEY.FIRST_OPEN_APP, "Ok")
       } else {
         screenName = ScreenName.Home
         if (userData !== null) {

@@ -16,7 +16,10 @@ import Home from "@screens/Home"
 
 // Utility
 import ViewPdf from "@screens/ViewPdf"
+
 import AppInstruction from "@screens/AppInstruction"
+import MapEvent from "@screens/MapEvent"
+import KPIStatus from "@screens/KPIStatus"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -36,6 +39,8 @@ export type PrimaryParamList = {
   Home: undefined
   Login: undefined
   AppInstruction: undefined
+  KPIStatus: undefined
+  MapEvent: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -56,6 +61,12 @@ export function MainNavigator() {
 
       {/** home */}
       <Stack.Screen name="Home" component={Home} />
+
+      {/** kpi */}
+      <Stack.Screen name="KPIStatus" component={KPIStatus} />
+
+      {/** MapEvent */}
+      <Stack.Screen name="MapEvent" component={MapEvent} />
 
       {/** Utility */}
       <Stack.Screen name="ViewPdf" component={ViewPdf} />

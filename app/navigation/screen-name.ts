@@ -4,5 +4,8 @@ const ScreenName = {
   Home: "Home",
   Login: "Login",
   AppInstruction: "AppInstruction",
+  MapEvent: "MapEvent",
+  KPIStatus: "KPIStatus",
+  ThongBao: "ThongBao",
 }
 export default ScreenName

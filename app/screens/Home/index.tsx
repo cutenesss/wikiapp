@@ -1,10 +1,23 @@
-import * as React from "react"
-import { Text, View, StyleSheet } from "react-native"
+import React, { useState } from "react"
+import { View, StyleSheet } from "react-native"
+import HeaderHome from "./Item/HeaderHome"
+import ListFunction from "./Item/ListFunction"
+import ModalInfoApp from "./Item/ModalInfoApp"
+import ViewWelcome from "./Item/ViewWelcome"
 
 const Home = () => {
+  const [modalInfoVisible, setModalInfoVisible] = useState(false)
+
+  const onChangeInfoVisible = (value: boolean) => {
+    setModalInfoVisible(value)
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <HeaderHome onPressUD={() => onChangeInfoVisible(true)} />
+      <ViewWelcome />
+      <ListFunction />
+      <ModalInfoApp isVisible={modalInfoVisible} onChangeModalVisible={onChangeInfoVisible} />
     </View>
   )
 }

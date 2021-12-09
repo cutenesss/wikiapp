@@ -11,10 +11,17 @@
  */
 import "./i18n"
 import "./utils/ignore-warnings"
-import { ModalService } from "@ui-kitten/components"
 import React, { useEffect } from "react"
+import { LogBox, Platform, Text, TextInput } from "react-native"
+import { ModalService } from "@ui-kitten/components"
+import { MenuProvider } from "react-native-popup-menu"
 // import { NavigationContainerRef } from "@react-navigation/native"
 import { SafeAreaProvider, initialWindowMetrics } from "react-native-safe-area-context"
+import { Provider } from "react-redux"
+import { enableScreens } from "react-native-screens"
+import codePush from "react-native-code-push"
+import * as Sentry from "@sentry/react-native"
+
 import { initFonts } from "./assets/theme/fonts" // expo
 import * as storage from "./utils/storage"
 import {
@@ -24,17 +31,12 @@ import {
   setRootNavigation,
   useNavigationPersistence,
 } from "./navigation"
-import { Provider } from "react-redux"
 import { appStore } from "./stores/configureStore"
 import RootView from "./RootView"
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
 // https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
-import { enableScreens } from "react-native-screens"
-import codePush from "react-native-code-push"
-import * as Sentry from "@sentry/react-native"
 import { navigationRef } from "./navigation/navigation-service"
-import { LogBox, Platform, Text, TextInput } from "react-native"
 import { CodePushKey } from "./env"
 
 LogBox.ignoreLogs([
@@ -90,15 +92,17 @@ function App() {
   // otherwise, we're ready to render the app
   return (
     <Provider store={appStore}>
-      <RootView>
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <RootNavigator
-            ref={navigationRef}
-            initialState={initialNavigationState}
-            onStateChange={onNavigationStateChange}
-          />
-        </SafeAreaProvider>
-      </RootView>
+      <MenuProvider>
+        <RootView>
+          <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+            <RootNavigator
+              ref={navigationRef}
+              initialState={initialNavigationState}
+              onStateChange={onNavigationStateChange}
+            />
+          </SafeAreaProvider>
+        </RootView>
+      </MenuProvider>
     </Provider>
   )
 }

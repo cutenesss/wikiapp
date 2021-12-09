@@ -10,3 +10,5 @@ export const EDoTuoi = {
   T48_60: "48-60 tháng",
   T60_72: "60-72 tháng",
 }
+
+export const phone = "09012328780"

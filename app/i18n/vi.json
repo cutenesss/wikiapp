@@ -1,6 +1,7 @@
 {
   "APP_NAME": "ezLife",
   "notice_t": "Thông báo",
+  "PHIEN_BAN": "Phiên bản",
   "something_wentwrong": "Đã có lỗi xảy ra. Vui lòng thử lại sau",
   "DONG_Y": "Đồng ý",
   "HUY": "Hủy",
@@ -47,5 +48,22 @@
   "TIEN_ICH_XUNG_QUANH": "Tiện ích xung quanh",
   "CONTENT_TIEN_ICH_XUNG_QUANH": "Dễ dàng tiếp cận các tiện ích thông minh!",
   "SU_KIEN_QUANH_TOI": "Sự kiện quanh tôi",
-  "CONTENT_SU_KIEN_QUANH_TOI": "Dễ dàng tìm kiếm các sự kiện diễn ra quanh ta!"
+  "CONTENT_SU_KIEN_QUANH_TOI": "Dễ dàng tìm kiếm các sự kiện diễn ra quanh ta!",
+
+  "HUONG_DAN": "Hướng dẫn",
+  "THONG_TIN_UNG_DUNG": "Thông tin ứng dụng",
+  "CHI_SO_KPI": "Chỉ số KPI",
+  "UNG_DUNG_EZ": "Ứng dụng: ezLife",
+  "DIEN_THOAI_HO_TRO": "Điện thoại hỗ trợ",
+  "TITLE_UNG_DUNG_EZ": "Kết nối người dân và chính quyền!",
+
+  "THONG_BAO": "Thông báo",
+  "PHAN_ANH_DO_THI": "Phản ánh đô thị",
+  "XIN_Y_KIEN_CU_DAN": "Xin ý kiến cư dân",
+  "GHI_CHU_CA_NHAN": "Ghi chú cá nhân",
+  "SU_KIEN_DIA_DANH": "Sự kiện địa danh",
+  "TRA_CUU_DICH_VU_CONG": "Tra cứu dịch vụ công",
+
+  "KINH_CHAO_QUY_KHACH": "Kính chào quý khách",
+  "CHINH_QUYEN": "Chính quyền Văn Quán-Hà Đông-Hà Nội"
 }

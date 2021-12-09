@@ -134,9 +134,7 @@ const Login = () => {
         title={translate("DANG_NHAP")}
         onPress={validateInput}
       />
-      <Text style={styles.textFooter}>
-        {translate("DANG_KI_TK")}
-      </Text>
+      <Text style={styles.textFooter}>{translate("DANG_KI_TK")}</Text>
     </View>
   )
 
