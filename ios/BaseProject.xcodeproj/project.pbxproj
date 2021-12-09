@@ -680,7 +680,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ptitqlkh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ezlife;
 				PRODUCT_NAME = BaseProject;
 				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -710,7 +710,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ptitqlkh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ezlife;
 				PRODUCT_NAME = BaseProject;
 				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -798,7 +798,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ptitqlkh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ezlife;
 				PRODUCT_NAME = BaseProject;
 				SWIFT_OBJC_BRIDGING_HEADER = "BaseProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -858,7 +858,7 @@
 				);
 				MARKETING_VERSION = 1.0.4;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ptitqlkh.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ezlife.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -893,7 +893,7 @@
 				MARKETING_VERSION = 1.0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ptitqlkh.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ezlife.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -929,7 +929,7 @@
 				);
 				MARKETING_VERSION = 1.0.4;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ptitqlkh.OneSignalNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ais.ezlife.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

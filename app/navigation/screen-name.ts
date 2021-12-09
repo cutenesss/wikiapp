@@ -1,7 +1,8 @@
 const ScreenName = {
   Launching: "Launching",
   ViewPdf: "ViewPdf",
-  TabHome: "TabHome",
+  Home: "Home",
   Login: "Login",
+  AppInstruction: "AppInstruction",
 }
 export default ScreenName

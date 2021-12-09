@@ -27,7 +27,7 @@ const SENTRY_KEY = "sentry-key-here"
 
 export default {
   currentNode: NODE_DEV,
-  serverURL: serverURL[NODE_DEV],
-  socketURL: socketURL[NODE_DEV],
+  serverURL: serverURL,
+  socketURL: socketURL,
   sentryKey: SENTRY_KEY,
 }

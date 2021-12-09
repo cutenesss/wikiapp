@@ -12,12 +12,11 @@ import Login from "@screens/Login"
 import Launching from "@screens/Launching"
 
 // Auth
-import TabHome from "@screens/TabHome"
-
-import ClassFunction from "@screens/TabHome/Tab/TrangChu/ClassFunction"
+import Home from "@screens/Home"
 
 // Utility
 import ViewPdf from "@screens/ViewPdf"
+import AppInstruction from "@screens/AppInstruction"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -34,8 +33,9 @@ import ViewPdf from "@screens/ViewPdf"
 export type PrimaryParamList = {
   Launching: undefined
   ViewPdf: undefined
-  TabHome: undefined
+  Home: undefined
   Login: undefined
+  AppInstruction: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -52,9 +52,10 @@ export function MainNavigator() {
       {/** Unauth */}
       <Stack.Screen name="Launching" component={Launching} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="AppInstruction" component={AppInstruction} />
 
-      {/** Tab home */}
-      <Stack.Screen name="TabHome" component={TabHome} />
+      {/** home */}
+      <Stack.Screen name="Home" component={Home} />
 
       {/** Utility */}
       <Stack.Screen name="ViewPdf" component={ViewPdf} />

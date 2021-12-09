@@ -1,7 +1,7 @@
-package com.ais.ptitqlkh;
+package com.ais.ezlife;
 
 // Unimodules https://docs.expo.io/bare/installing-unimodules/#configuration-for-android
-import com.ais.ptitqlkh.generated.BasePackageList;
+import com.ais.ezlife.generated.BasePackageList;
 
 import android.app.Application;
 import android.content.Context;
@@ -84,7 +84,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.ais.ptitqlkh.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.ais.ezlife.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

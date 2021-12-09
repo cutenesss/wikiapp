@@ -1,0 +1,41 @@
+{
+  "strict": {
+    "text-font-family": "Roboto",
+
+    "text-heading-1-font-size": 31,
+    "text-heading-1-font-weight": "900",
+    "text-heading-1-font-family": "Roboto",
+    "text-heading-2-font-size": 23,
+    "text-heading-2-font-weight": "900",
+    "text-heading-2-font-family": "Roboto",
+    "text-heading-3-font-size": 15,
+    "text-heading-3-font-weight": "900",
+    "text-heading-3-font-family": "Roboto",
+    "text-heading-5-font-size": 11,
+    "text-heading-5-font-weight": "900",
+    "text-heading-5-font-family": "Roboto",
+
+    "text-subtitle-1-font-size": 31,
+    "text-subtitle-1-font-weight": "400",
+    "text-subtitle-1-font-family": "Roboto",
+    "text-subtitle-2-font-size": 23,
+    "text-subtitle-2-font-weight": "400",
+    "text-subtitle-2-font-family": "Roboto",
+
+    "text-paragraph-1-font-size": 15,
+    "text-paragraph-1-font-weight": "400",
+    "text-paragraph-1-font-family": "Roboto",
+    "text-paragraph-2-font-size": 11,
+    "text-paragraph-2-font-weight": "400",
+    "text-paragraph-2-font-family": "Roboto",
+
+    "text-caption-1-font-size": 11,
+    "text-caption-1-font-weight": "400",
+    "text-caption-1-font-family": "Roboto",
+
+    "text-label-font-size": 11,
+    "text-label-font-weight": "800",
+    "text-label-font-family": "Roboto"
+  },
+  "components": {}
+}

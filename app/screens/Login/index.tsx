@@ -115,7 +115,7 @@ const Login = () => {
           firstToken.accessToken,
         )
         await AsyncStorageUtils.saveObject(AsyncStorageUtils.KEY.USERNAME, email.current)
-        reset(ScreenName.TabHome)
+        reset(ScreenName.Home)
       } else {
         handleErrorApiWithStatusCode(resLogin?.data?.errorCode)
       }
@@ -134,7 +134,7 @@ const Login = () => {
         title={translate("DANG_NHAP")}
         onPress={validateInput}
       />
-      <Text style={styles.textFooter} onPress={() => navigate(ScreenName.Register)}>
+      <Text style={styles.textFooter}>
         {translate("DANG_KI_TK")}
       </Text>
     </View>

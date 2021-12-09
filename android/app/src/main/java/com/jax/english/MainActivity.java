@@ -1,4 +1,4 @@
-package com.ais.ptitqlkh;
+package com.ais.ezlife;
 
 import com.facebook.react.ReactActivity;
 

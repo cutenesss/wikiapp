@@ -11,6 +11,7 @@
  */
 import "./i18n"
 import "./utils/ignore-warnings"
+import { ModalService } from "@ui-kitten/components"
 import React, { useEffect } from "react"
 // import { NavigationContainerRef } from "@react-navigation/native"
 import { SafeAreaProvider, initialWindowMetrics } from "react-native-safe-area-context"
@@ -43,6 +44,7 @@ LogBox.ignoreLogs([
 enableScreens()
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
+ModalService.setShouldUseTopInsets = true
 Sentry.init({
   dsn: "https://82fb69f21a9f4723ab15669cf7650831@o490362.ingest.sentry.io/5620458",
 })

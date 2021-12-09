@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Mầm non</string>
+	<string>ezLife</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Mầm non</string>
+	<string>ezLife</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -35,7 +35,7 @@
 			<string>BaseProject</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>Mầm non</string>
+				<string>ezLife</string>
 			</array>
 		</dict>
 	</array>
@@ -46,7 +46,7 @@
 	<key>FacebookAppID</key>
 	<string>249678483417204</string>
 	<key>FacebookDisplayName</key>
-	<string>Mầm non</string>
+	<string>ezLife</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

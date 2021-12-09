@@ -3,6 +3,9 @@ import { StyleSheet, View, Platform } from "react-native"
 import { connect } from "react-redux"
 import OneSignal from "react-native-onesignal"
 import * as eva from "@eva-design/eva"
+import theme from "./theme.json"
+import mapping from "./mapping.json"
+
 import { RootSiblingParent } from "react-native-root-siblings"
 import { ApplicationProvider } from "@ui-kitten/components"
 
@@ -82,14 +85,13 @@ class RootView extends Component<{
   render() {
     return (
       <>
-        <ApplicationProvider {...eva} theme={eva.light}>
+        <ApplicationProvider {...eva} theme={{ ...eva.light, ...theme }} customMapping={mapping}>
           <View style={styles.container}>
             <RootSiblingParent>
               {this.props.children}
               <NoInternet />
               <CustomDialog />
               <CustomConfirmDialog />
-              {/* <VersionChecker /> */}
             </RootSiblingParent>
           </View>
         </ApplicationProvider>

@@ -7,7 +7,7 @@ import { useSelector as useReduxSelector, TypedUseSelectorHook } from "react-red
 const rootReducers = combineReducers({
   userReducers,
   dialogStateReducers,
-  dialogConfirmStateReducers
+  dialogConfirmStateReducers,
 })
 
 export const useSelector: TypedUseSelectorHook<ReturnType<typeof rootReducers>> = useReduxSelector

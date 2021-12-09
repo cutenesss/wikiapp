@@ -24,3 +24,10 @@ export interface IResponseUploadFile {
     }
   }
 }
+
+export interface ItemPager {
+  title: string
+  content: string
+  icon: any
+  color: string
+}
