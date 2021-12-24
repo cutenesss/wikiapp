@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "717817327699",
+    "project_id": "ezlife-cdit",
+    "storage_bucket": "ezlife-cdit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717817327699:android:03131344f004803ea796a6",
+        "android_client_info": {
+          "package_name": "com.ais.ezlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717817327699-ig5njc13t141bg5vii034v62re97fudf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ais.ezlife",
+            "certificate_hash": "83fd5b659ffd7b2766dbdd9207ae215ae49c55a5"
+          }
+        },
+        {
+          "client_id": "717817327699-dirb95jdlunmbv7ots6j7npcb4ndpm7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfNBQVENRHlBLXoED23dsAp0cbmIJFyl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717817327699-dirb95jdlunmbv7ots6j7npcb4ndpm7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

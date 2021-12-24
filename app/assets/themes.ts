@@ -1,3 +1,4 @@
+import { HEIGHT, WIDTH } from "@configs/functions"
 import colors from "../assets/colors"
 
 const themes = {
@@ -26,6 +27,12 @@ const themes = {
     left: 25,
     right: 25,
     bottom: 25,
+  },
+  empty: {
+    backgroundColor: colors.whitef2,
+    width: "100%",
+    paddingHorizontal: WIDTH(16),
+    paddingVertical: HEIGHT(20),
   },
 }
 

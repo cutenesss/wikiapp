@@ -1,38 +1,76 @@
+/* eslint-disable camelcase */
 import { getFileName } from "@configs/functions"
 import {
   IBodyLogin,
   IBodyRegiter,
   IBodyUploadFile,
-  IResponeSuccessBase,
+  IAuthorityBody,
   IResponseLogin,
   IResponseRegister,
   IResponseUploadFile,
   IUserInformation,
+  IBodyInit,
+  IResponseInit,
+  IResponseNewsInLocalArea,
+  IResponseBookmarkNews,
+  IResponseArea,
 } from "@types"
-import { getData, postData, postFormData } from "../helpers"
+import { postData, postFormData } from "../helpers"
 import URL from "../url"
 
+export const checkAndInit = (body: IBodyInit) =>
+  postData<IBodyInit, { data: IResponseInit }>({
+    endpoint: URL.INIT,
+    params: body,
+  }).then((res) => res.data)
+
 export const register = (body: IBodyRegiter) =>
-  postData<IBodyRegiter, Array<IResponseRegister>>({
+  postData<IBodyRegiter, IResponseRegister>({
     endpoint: URL.REGISTER,
     params: body,
-  }).then((res) => res)
+  }).then((res) => res.data)
 
 export const login = (body: IBodyLogin) =>
-  postData<IBodyLogin, { data: Array<IResponseLogin>; status: number }>({
+  postData<IBodyLogin, IResponseLogin>({
     endpoint: URL.LOGIN,
     params: body,
-  }).then((res) => res)
+  }).then((res) => res.data)
 
-export const logout = () =>
-  postData<IBodyLogin, IResponeSuccessBase>({
+export const logout = (body: IBodyLogin) =>
+  postData<IBodyLogin, IResponseLogin>({
     endpoint: URL.LOGOUT,
-  }).then((res) => res)
+    params: body,
+  }).then((res) => res.data)
 
-export const getMyProfile = () =>
-  getData<null, IUserInformation>({
+export const getAuthorityInfo = (body: IAuthorityBody) =>
+  postData<IAuthorityBody, IResponseInit>({
+    endpoint: URL.AUTHORITY,
+    params: body,
+  }).then((res) => res.data)
+
+export const getNewsInLocalArea = (body: IBodyInit) =>
+  postData<IBodyInit, IResponseNewsInLocalArea>({
+    endpoint: URL.LOCAL_AREA_NEWS,
+    params: body,
+  }).then((res) => res.data)
+
+export const postBookmarkNews = (body: IBodyInit) =>
+  postData<IBodyInit, IResponseBookmarkNews>({
+    endpoint: URL.BOOKMARK_NEWS,
+    params: body,
+  }).then((res) => res.data)
+
+export const getSubArea = (id: string) =>
+  postData<{ parent_id: string }, IResponseArea>({
+    endpoint: URL.GET_AREA,
+    params: { parent_id: id },
+  }).then((res) => res.data)
+
+export const getMyProfile = (body: IBodyInit) =>
+  postData<IBodyInit, IUserInformation>({
     endpoint: URL.GET_MY_PROFILE,
-  }).then((res) => res)
+    params: body,
+  }).then((res) => res.data)
 
 export const uploadImage = async (imagefile: IBodyUploadFile, isPublic: boolean) => {
   const formUpdate = new FormData()
@@ -44,8 +82,3 @@ export const uploadImage = async (imagefile: IBodyUploadFile, isPublic: boolean)
     params: formUpdate,
   })
 }
-
-export const getSetting = (key: string) =>
-  getData<{ key: string }, IUserInformation>({
-    endpoint: `${URL.SETTING}${key}`,
-  }).then((res) => res)

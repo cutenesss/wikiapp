@@ -1,54 +1,91 @@
 import React from "react"
-import { View, StyleSheet, TouchableOpacity, Linking } from "react-native"
+import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "react-native"
 import { Text } from "@ui-kitten/components"
-import Icon from "react-native-vector-icons/MaterialCommunityIcons"
-import Feather from "react-native-vector-icons/Feather"
+import { useSelector } from "@redux/reducers"
+import auth from "@react-native-firebase/auth"
+import * as Keychain from "react-native-keychain"
+
+import STATUS from "@apis/status"
+import { logout } from "@apis/functions/user"
 
 import { HEIGHT, WIDTH } from "@configs/functions"
 import R from "@assets/R"
 import { translate } from "@i18n"
-import { navigate } from "@navigation/navigation-service"
+import { navigate, reset } from "@navigation/navigation-service"
 import ScreenName from "@navigation/screen-name"
 
-const ViewWelcome = () => {
+interface Props {
+  onPressPhone: () => void
+}
+
+const ViewWelcome = (props: Props) => {
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={R.images.backgroundWelcome}
+      resizeMode="stretch"
+      style={styles.container}
+    >
       <ViewUser />
-      <ViewContent />
-    </View>
+      <ViewContent onPressPhone={props?.onPressPhone} />
+    </ImageBackground>
   )
 }
 
 const ViewUser = () => {
+  const { initState } = useSelector((state) => state.initStateReducers)
   const onPress = () => {
     navigate(ScreenName.Login)
   }
+
+  const logOut = async () => {
+    const body = {
+      session_id: initState?.session_id,
+    }
+    try {
+      const res = await logout(body)
+      if (res?.code === STATUS.SUCCESS) {
+        auth()
+          .signOut()
+          .then(async () => {
+            await Keychain.resetGenericPassword()
+            reset(ScreenName.AppInstruction)
+          })
+      } else throw new Error(JSON.stringify(res))
+    } catch (error) {}
+  }
+
   return (
-    <TouchableOpacity style={styles.viewUser} onPress={onPress}>
-      <Icon size={WIDTH(30)} name="account-circle" color={R.colors.black0} />
-      <Text category="p1" style={styles.txtUser}>
-        KHACH
+    <View style={styles.viewUser}>
+      <TouchableOpacity style={styles.row} onPress={onPress}>
+        <Image source={R.images.defaultAvatar} resizeMode="contain" style={styles.img} />
+        <Text category="p1" style={styles.txtUser}>
+          KHACH
+        </Text>
+      </TouchableOpacity>
+      <Text category="p1" style={styles.txtUser} onPress={logOut}>
+        {translate("DANG_XUAT")}
       </Text>
-    </TouchableOpacity>
+    </View>
   )
 }
 
-const ViewContent = () => {
-  const onPressPhone = () => {
-    Linking.openURL(`tel:${R.strings.phone}`)
-  }
+const ViewContent = ({ onPressPhone }) => {
   return (
     <View style={styles.viewContent}>
-      <TouchableOpacity onPress={onPressPhone} style={styles.viewIcon}>
-        <Feather size={WIDTH(40)} name="phone-call" color={R.colors.white} />
+      <TouchableOpacity onPress={onPressPhone} style={styles.viewPhone}>
+        <Image source={R.images.iconPhone} resizeMode="contain" style={styles.phone} />
       </TouchableOpacity>
       <View style={styles.content}>
-        <Text category="h3" style={styles.txtHeader}>
-          {translate("CHINH_QUYEN")}
-        </Text>
-        <Text category="p1" style={styles.txtContent}>
-          {translate("KINH_CHAO_QUY_KHACH")}
-        </Text>
+        <View style={styles.viewHeader}>
+          <Text category="h4" style={styles.txtHeader}>
+            {translate("CHINH_QUYEN")}
+          </Text>
+        </View>
+        <View style={styles.viewTxtContent}>
+          <Text category="p1" style={styles.txtContent}>
+            {translate("KINH_CHAO_QUY_KHACH")}
+          </Text>
+        </View>
       </View>
     </View>
   )
@@ -56,48 +93,67 @@ const ViewContent = () => {
 export default ViewWelcome
 const styles = StyleSheet.create({
   container: {
-    height: HEIGHT(220),
-    marginBottom: HEIGHT(24),
+    height: HEIGHT(380),
   },
   content: {
     alignItems: "center",
     justifyContent: "center",
-    marginRight: WIDTH(40),
-    width: WIDTH(250),
+    marginLeft: -WIDTH(45),
+    width: WIDTH(280),
+  },
+  img: {
+    height: WIDTH(30),
+    width: WIDTH(30),
+  },
+  phone: {
+    height: WIDTH(115),
+    width: WIDTH(115),
+  },
+  row: {
+    alignItems: "center",
+    flexDirection: "row",
   },
   txtContent: {
-    alignSelf: "center",
+    color: R.colors.white,
+    fontWeight: "bold",
   },
   txtHeader: {
-    textAlign: "center",
+    color: R.colors.black0,
+    fontWeight: "bold",
   },
   txtUser: {
-    color: R.colors.black0,
+    color: R.colors.white,
     marginLeft: WIDTH(4),
   },
   viewContent: {
     alignItems: "center",
+    alignSelf: "center",
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginLeft: WIDTH(16),
-    marginTop: HEIGHT(30),
+    marginTop: HEIGHT(32),
   },
-  viewIcon: {
-    alignItems: "center",
-    backgroundColor: R.colors.lime700,
-    borderColor: R.colors.white,
-    borderRadius: WIDTH(75),
-    borderWidth: WIDTH(5),
-    height: WIDTH(75),
-    justifyContent: "center",
-    marginLeft: WIDTH(16),
-    width: WIDTH(75),
-    ...R.themes.shadow,
+  viewHeader: {
+    backgroundColor: R.colors.primary,
+    borderTopRightRadius: WIDTH(4),
+    paddingLeft: WIDTH(60),
+    paddingRight: WIDTH(8),
+    paddingVertical: HEIGHT(12),
+    width: "100%",
+  },
+  viewPhone: {
+    zIndex: 10,
+  },
+  viewTxtContent: {
+    backgroundColor: R.colors.black40p,
+    borderBottomRightRadius: WIDTH(4),
+    paddingHorizontal: WIDTH(60),
+    paddingVertical: HEIGHT(6),
+    width: "100%",
   },
   viewUser: {
     alignItems: "center",
     flexDirection: "row",
-    marginLeft: WIDTH(16),
+    justifyContent: "space-between",
     marginTop: HEIGHT(24),
+    paddingHorizontal: WIDTH(24),
   },
 })

@@ -1,13 +1,6 @@
 import React, { FunctionComponent } from "react"
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  StyleProp,
-  TextStyle,
-  View,
-  ViewStyle,
-} from "react-native"
+import { StyleSheet, TouchableOpacity, StyleProp, TextStyle, View, ViewStyle } from "react-native"
+import { Text } from "@ui-kitten/components"
 
 // config
 import R from "../../assets/R"
@@ -34,7 +27,9 @@ const BaseButton: FunctionComponent<Props> = (props: Props) => {
         activeOpacity={0.6}
         onPress={onPress && onPress}
       >
-        <Text style={[styles.title, customStyleTitle]}>{title}</Text>
+        <Text category={"h4"} style={customStyleTitle}>
+          {title}
+        </Text>
       </TouchableOpacity>
     )
   }
@@ -50,11 +45,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingVertical: HEIGHT(13),
     width: WIDTH(343),
-  },
-  title: {
-    color: R.colors.white,
-    fontFamily: R.fonts.Roboto,
-    fontSize: getFont(18),
-    lineHeight: getLineHeight(24),
   },
 })

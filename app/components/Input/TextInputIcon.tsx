@@ -13,7 +13,7 @@ type Props = {
   icon?: any
   isPassword?: boolean
   onChangeValue?: (value: string) => void
-  placeholder: string
+  placeholder?: string
   defaultValue: string
   required?: boolean
   style?: any
@@ -33,6 +33,9 @@ type Props = {
   isAlert?: number
   textAlert?: string
   customRow?: any
+  customContainerStyle?: any
+  customStyleTitle?: any
+  customStyleTxtTitle?: any
 }
 
 const TextInputIcon = (props: Props) => {
@@ -53,21 +56,16 @@ const TextInputIcon = (props: Props) => {
     dateFormat,
     showDateFormat,
     minDate,
-    isAlert,
     maxDate,
-    textAlert,
-    index,
     customStyle,
+    customContainerStyle,
+    customStyleTitle,
+    customStyleTxtTitle,
   } = props
-  const [change, setChange] = useState(false)
   const [textInputValue, setTextInputValue] = useState(defaultValue || "")
   const [hideText, setHideText] = useState(props?.isPassword)
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
   const [datePickerValue, setDatePickerValue] = useState(defaultValue || new Date().toISOString())
-
-  React.useEffect(() => {
-    if (isAlert === index && textAlert !== "") textinput.current?.focus()
-  }, [isAlert, textAlert])
 
   React.useEffect(() => {
     if (type === INPUT_TYPE.DATE_PICKER) setDatePickerValue(defaultValue)
@@ -98,24 +96,20 @@ const TextInputIcon = (props: Props) => {
         break
     }
   }
-  const borderColor = isAlert === index && textAlert !== "" ? R.colors.redAlert : R.colors.primary
-  const borderWidth = change || (isAlert === index && textAlert !== "") ? 1 : 0
 
   switch (type) {
     case INPUT_TYPE.TEXT_INPUT: {
       return (
-        <View style={styles.container}>
-          <TextInputTitle title={props.title} />
-          <View style={[styles.inputLine, { borderColor, borderWidth }, customRow]}>
+        <View style={[styles.container, customContainerStyle]}>
+          <TextInputTitle
+            title={props.title}
+            customStyleTitle={customStyleTitle}
+            customStyleTxtTitle={customStyleTxtTitle}
+          />
+          <View style={[styles.inputLine, customRow]}>
             {icon && icon}
             <TextInput
               ref={(ref) => (textinput.current = ref)}
-              onBlur={() => {
-                setChange(false)
-              }}
-              onFocus={() => {
-                setChange(true)
-              }}
               value={textInputValue}
               keyboardType={isNumber ? "numeric" : "default"}
               editable={editable !== undefined ? editable : true}
@@ -129,7 +123,6 @@ const TextInputIcon = (props: Props) => {
               multiline={multiline}
               textAlignVertical={multiline ? "top" : "center"}
               defaultValue={defaultValue}
-              autoFocus={isAlert === index && textAlert !== ""}
             />
             {props?.isPassword && (
               <TouchableOpacity onPress={() => setHideText(!hideText)} hitSlop={R.themes.hitSlop}>
@@ -141,7 +134,6 @@ const TextInputIcon = (props: Props) => {
               </TouchableOpacity>
             )}
           </View>
-          <TextAlert isVisible={isAlert === index && textAlert !== ""} textAlert={textAlert} />
         </View>
       )
     }
@@ -193,21 +185,19 @@ const TextInputIcon = (props: Props) => {
   }
 }
 
-const TextInputTitle = ({ title }: { title: string }) => {
+const TextInputTitle = ({
+  title,
+  customStyleTitle,
+  customStyleTxtTitle,
+}: {
+  title: string
+  customStyleTitle?: any
+  customStyleTxtTitle?: any
+}) => {
   if (title) {
     return (
-      <View style={styles.viewText}>
-        <Text style={styles.text}>{title && title.toUpperCase()}</Text>
-      </View>
-    )
-  } else return <View />
-}
-
-const TextAlert = ({ isVisible, textAlert }: { isVisible: boolean; textAlert: string }) => {
-  if (isVisible) {
-    return (
-      <View style={styles.viewAlert}>
-        <Text style={[styles.text, { color: R.colors.primary }]}>{textAlert && textAlert}</Text>
+      <View style={[styles.viewText, customStyleTitle]}>
+        <Text style={[styles.text, customStyleTxtTitle]}>{title && title.toUpperCase()}</Text>
       </View>
     )
   } else return <View />
@@ -224,7 +214,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: R.colors.gray0,
     borderRadius: WIDTH(8),
-    borderWidth: WIDTH(1),
     flexDirection: "row",
     marginBottom: HEIGHT(2),
     marginHorizontal: 1,
@@ -245,13 +234,9 @@ const styles = StyleSheet.create({
     fontSize: getFont(16),
     marginRight: WIDTH(5),
     marginVertical: 0,
-    paddingLeft: WIDTH(14),
+    paddingLeft: WIDTH(6),
     paddingVertical: 0,
-    width: WIDTH(260),
-  },
-  viewAlert: {
-    marginLeft: WIDTH(16),
-    marginTop: HEIGHT(8),
+    width: WIDTH(280),
   },
   viewDatePicker: {
     alignItems: "center",

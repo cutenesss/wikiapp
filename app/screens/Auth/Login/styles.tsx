@@ -5,14 +5,11 @@ import { getFont, getLineHeight, HEIGHT, WIDTH } from "@configs/functions"
 export default StyleSheet.create({
   button: {
     marginBottom: HEIGHT(30),
+    marginTop: HEIGHT(16),
   },
   container: {
     alignItems: "center",
-    backgroundColor: R.colors.white,
     flex: 1,
-  },
-  flatlist: {
-    backgroundColor: R.colors.white,
   },
   flexRow: {
     alignItems: "center",
@@ -21,19 +18,37 @@ export default StyleSheet.create({
     marginTop: HEIGHT(24),
   },
   footer: {
-    marginTop: HEIGHT(50),
+    marginTop: HEIGHT(20),
     paddingHorizontal: WIDTH(16),
+  },
+  headerStyle: {
+    backgroundColor: R.colors.transparent,
+  },
+  img: {
+    alignSelf: "center",
+    marginVertical: HEIGHT(24),
+  },
+  input: {
+    backgroundColor: R.colors.transparent,
+  },
+  inputContainer: {
+    backgroundColor: R.colors.transparent,
+    marginTop: HEIGHT(8),
+  },
+  list: {
+    backgroundColor: R.colors.transparent,
+    flexGrow: 0,
   },
   logo: {
     alignSelf: "center",
-    height: WIDTH(142),
-    marginBottom: HEIGHT(16),
-    marginTop: HEIGHT(70),
-    width: WIDTH(142),
+    height: WIDTH(110),
+    marginBottom: HEIGHT(40),
+    marginTop: HEIGHT(50),
+    width: WIDTH(110),
   },
   textFooter: {
     alignSelf: "center",
-    color: R.colors.black0,
+    color: R.colors.white,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(16),
     lineHeight: getLineHeight(24),
@@ -52,5 +67,8 @@ export default StyleSheet.create({
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(16),
     lineHeight: getLineHeight(24),
+  },
+  titleHeaderStyle: {
+    color: R.colors.white,
   },
 })

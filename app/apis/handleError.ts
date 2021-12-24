@@ -60,17 +60,11 @@ export const checkStatus = (responseStatus, checkingStatus = STATUS.SUCCESS) =>
 
 export const handleErrorApiWithStatusCode = (responsecode: string) => {
   switch (responsecode) {
-    case "UNAUTHORIZED_USERNAME_NOT_FOUND":
+    case STATUS_CODE.NO_USER:
       popupOk(translate("notice_t"), translate("TEN_DANG_NHAP_KHONG_TON_TAI"))
       break
-    case "UNAUTHORIZED_WRONG_PASSWORD":
+    case STATUS_CODE.INVALID_PASSWORD:
       popupOk(translate("notice_t"), translate("SAI_MAT_KHAU"))
-      break
-    case "HO_SO_GIAO_VIEN_NOT_FOUND":
-      popupOk(translate("notice_t"), translate("HO_SO_GIAO_VIEN_NOT_FOUND"))
-      break
-    case "DOCUMENT_EXISTS":
-      popupOk(translate("notice_t"), translate("DA_DIEM_DANH_ROI"))
       break
     default:
       popupOk(translate("notice_t"), translate("something_wentwrong"))

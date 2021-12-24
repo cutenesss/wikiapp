@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     alignItems: "center",
+    backgroundColor: R.colors.transparent,
     bottom: 0,
     elevation: 3,
     justifyContent: "center",

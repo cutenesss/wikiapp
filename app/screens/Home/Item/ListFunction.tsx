@@ -1,52 +1,53 @@
 import React from "react"
-import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
-import { Text } from "@ui-kitten/components"
+import { StyleSheet, TouchableOpacity, Image } from "react-native"
+import { List, Text } from "@ui-kitten/components"
 
 import { getWidth, HEIGHT, WIDTH } from "@configs/functions"
 import R from "@assets/R"
 import { translate } from "@i18n"
 import ScreenName from "@navigation/screen-name"
+import { navigate } from "@navigation/navigation-service"
 
 const DATA_LIST = [
   {
-    title: translate("THONG_BAO"),
-    destination: ScreenName.ThongBao,
+    title: translate("BANG_TIN"),
+    image: R.images.iconBangTin,
+    destination: ScreenName.News,
   },
   {
     title: translate("PHAN_ANH_DO_THI"),
-    destination: ScreenName.ThongBao,
+    image: R.images.iconPhanAnh,
+    destination: ScreenName.Feedback,
   },
   {
     title: translate("XIN_Y_KIEN_CU_DAN"),
+    image: R.images.iconXinYKienCuDan,
     destination: ScreenName.ThongBao,
   },
   {
     title: translate("GHI_CHU_CA_NHAN"),
+    image: R.images.iconGhiChuCaNhan,
     destination: ScreenName.ThongBao,
   },
   {
     title: translate("SU_KIEN_DIA_DANH"),
+    image: R.images.iconSuKien,
     destination: ScreenName.ThongBao,
   },
   {
     title: translate("TRA_CUU_DICH_VU_CONG"),
+    image: R.images.iconDichVu,
     destination: ScreenName.ThongBao,
   },
 ]
 
 const ListFunction = () => {
-  const onPressItem = (index: number) => {
-    switch (index) {
-      case 0:
-        break
-
-      default:
-        break
-    }
+  const onPressItem = (item) => {
+    navigate(item?.destination)
   }
 
   return (
-    <FlatList
+    <List
       data={DATA_LIST}
       keyExtractor={(item) => item.title}
       numColumns={3}
@@ -54,15 +55,15 @@ const ListFunction = () => {
       showsVerticalScrollIndicator={false}
       columnWrapperStyle={styles.row}
       style={styles.list}
-      renderItem={({ item, index }) => <ViewItem item={item} onPress={() => onPressItem(index)} />}
+      renderItem={({ item }) => <ViewItem item={item} onPress={() => onPressItem(item)} />}
     />
   )
 }
 
 const ViewItem = ({ item, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.viewItem}>
-    <View style={styles.viewIcon} />
-    <Text category="p1" style={styles.txt}>
+    <Image source={item?.image} resizeMode="contain" style={styles.viewIcon} />
+    <Text category="label" style={styles.txt}>
       {item?.title}
     </Text>
   </TouchableOpacity>
@@ -71,9 +72,12 @@ const ViewItem = ({ item, onPress }) => (
 export default ListFunction
 const styles = StyleSheet.create({
   list: {
+    backgroundColor: R.colors.transparent,
     flexGrow: 0,
+    marginTop: -HEIGHT(40),
     paddingHorizontal: WIDTH(12),
     width: getWidth(),
+    zIndex: 10,
   },
   row: {
     justifyContent: "space-between",
@@ -86,15 +90,8 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
   },
   viewIcon: {
-    alignItems: "center",
-    backgroundColor: R.colors.lime700,
-    borderColor: R.colors.white,
-    borderRadius: WIDTH(90),
-    borderWidth: WIDTH(5),
     height: WIDTH(90),
-    justifyContent: "center",
     width: WIDTH(90),
-    ...R.themes.shadow,
   },
   viewItem: {
     alignItems: "center",

@@ -24,8 +24,8 @@ const HeaderHome = (props: Props) => {
     <View style={styles.container}>
       <CustomStatusBar barStyle="light-content" backgroundColor={R.colors.transparent} />
       <View style={styles.contentView}>
-        <Text category="s2" style={styles.txt}>
-          ezLife
+        <Text category="h4" style={styles.txt}>
+          {translate("APP_NAME")}
         </Text>
         <ViewFunction onPressUD={onPressUD} />
       </View>
@@ -49,11 +49,11 @@ const ViewFunction = ({ onPressUD }) => {
   return (
     <View style={styles.viewRight}>
       <TouchableOpacity style={styles.viewBulb} onPress={onLightPress}>
-        <Entypo size={WIDTH(25)} name="light-bulb" color={R.colors.white} />
+        <Entypo size={WIDTH(25)} name="location-pin" color={R.colors.primary} />
       </TouchableOpacity>
       <Menu>
         <MenuTrigger>
-          <Ionicons size={WIDTH(25)} name="settings-outline" color={R.colors.white} />
+          <Ionicons size={WIDTH(25)} name="settings-outline" color={R.colors.primary} />
         </MenuTrigger>
         <MenuOptions>
           <MenuOption onSelect={onPressHD}>
@@ -74,11 +74,11 @@ const ViewFunction = ({ onPressUD }) => {
 export default HeaderHome
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: R.colors.blue0084,
+    backgroundColor: R.colors.black3,
   },
   contentView: {
     alignItems: "center",
-    backgroundColor: R.colors.blue0084,
+    backgroundColor: R.colors.black3,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: WIDTH(12),
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
   },
   txt: {
     color: R.colors.white,
+    fontWeight: "bold",
   },
   txtMenu: {
     color: R.colors.black0,

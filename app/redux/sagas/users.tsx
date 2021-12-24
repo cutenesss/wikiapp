@@ -1,13 +1,18 @@
 import { put, takeEvery, call } from "redux-saga/effects"
 import { USER_ACTION } from "../actions/actionTypes"
 import { getMyProfile } from "@apis/functions/user"
+import STATUS from "@apis/status"
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchUser() {
+function* fetchUser(action) {
   try {
-    const userResponse = yield call(getMyProfile)
-    if (userResponse.data.data) {
-      yield put({ type: USER_ACTION.USER_FETCH_SUCCEEDED, user: userResponse.data.data })
+    console.log("action.session", action.session)
+    const userResponse = yield call(getMyProfile, action.session)
+    console.log("userResponse", userResponse)
+    if (userResponse?.code === STATUS.SUCCESS) {
+      yield put({ type: USER_ACTION.USER_FETCH_SUCCEEDED, user: userResponse.data })
+    } else {
+      yield put({ type: USER_ACTION.USER_FETCH_FAILED })
     }
   } catch (e) {
     // console.log("error_errror", JSON.stringify(e))

@@ -6,14 +6,14 @@ import R from "../../assets/R"
 
 type Props = {
   backgroundColor?: string
-  barStyle?: any
+  blackBarStyle?: boolean
   isStatusBarAndroidVisible?: boolean
 }
 
 const CustomStatusBar: React.FC<Props> = (props: Props) => {
-  const { isStatusBarAndroidVisible, backgroundColor, barStyle } = props
-  const color = backgroundColor || R.colors.white
-  const bar = barStyle || "dark-content"
+  const { isStatusBarAndroidVisible, backgroundColor, blackBarStyle } = props
+  const color = backgroundColor || R.colors.black3
+  const bar = blackBarStyle ? "dark-content" : "light-content"
   const height = getStatusBarHeight(isStatusBarAndroidVisible)
 
   return (

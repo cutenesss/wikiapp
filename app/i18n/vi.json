@@ -11,6 +11,7 @@
   "THANG": "Tháng",
   "NAM": "Năm",
   "NGAY": "Ngày",
+  "SDT": "Số điện thoại",
 
   "KHONG_CO_MANG": "Không có mạng",
   "KIEM_TRA_LAI_KET_NOI": "Vui lòng kiểm tra lại kết nối",
@@ -26,15 +27,24 @@
   "email_format_invalid": "Định dạng email không hợp lệ. Vui lòng nhập lại",
   "phone_format_invalid": "Số điện thoại không hợp lệ. Vui lòng nhập lại",
   "DANG_NHAP": "Đăng nhập",
+  "DANG_KI_TAI_KHOAN": "Đăng kí tài khoản",
+  "TAO_TAI_KHOAN": "Tạo tài khoản",
   "DANG_XUAT": "Đăng xuất",
   "TEN_DANG_NHAP_KHONG_TON_TAI": "Tên đăng nhập không tồn tại",
   "register_success": "Đăng ký tài khoản thành công",
   "SAI_MAT_KHAU": "Sai mật khẩu",
   "CHON_VAI_TRO": "Chọn vai trò",
+  "CHUA_CHON_PHUONG_XA": "Vui lòng chọn phường/xã",
+  "CHUA_CHON_THANH_PHO": "Vui lòng chọn thành phố",
+  "CHUA_CHON_QUAN_HUYEN": "Vui lòng chọn quận/huyện",
 
-  "DANG_KI_TK": "Đăng kí tài khoản",
+  "DANG_KI_TK": "Chưa có tài khoản? Tạo tài khoản",
+  "DA_CO_TK": "Đã có tài khoản? Đăng nhập",
   "re_pass_error": "Mật khẩu nhập lại không trùng nhau",
   "PASS_MUST_HAVE_8_CHAR": "Độ dài mật khẩu không ít hơn 8 kí tự",
+  "CHON_TP": "Chọn thành phố",
+  "CHON_QUAN_HUYEN": "Chọn quận huyện",
+  "CHON_PHUONG_XA": "Chọn phường xã",
 
   "TRANG_CHU": "Trang chủ",
   "CA_NHAN": "Cá nhân",
@@ -49,6 +59,7 @@
   "CONTENT_TIEN_ICH_XUNG_QUANH": "Dễ dàng tiếp cận các tiện ích thông minh!",
   "SU_KIEN_QUANH_TOI": "Sự kiện quanh tôi",
   "CONTENT_SU_KIEN_QUANH_TOI": "Dễ dàng tìm kiếm các sự kiện diễn ra quanh ta!",
+  "SDT_HOTLINE": "Số điện thoại hotline",
 
   "HUONG_DAN": "Hướng dẫn",
   "THONG_TIN_UNG_DUNG": "Thông tin ứng dụng",
@@ -57,7 +68,7 @@
   "DIEN_THOAI_HO_TRO": "Điện thoại hỗ trợ",
   "TITLE_UNG_DUNG_EZ": "Kết nối người dân và chính quyền!",
 
-  "THONG_BAO": "Thông báo",
+  "BANG_TIN": "Bảng tin",
   "PHAN_ANH_DO_THI": "Phản ánh đô thị",
   "XIN_Y_KIEN_CU_DAN": "Xin ý kiến cư dân",
   "GHI_CHU_CA_NHAN": "Ghi chú cá nhân",
@@ -65,5 +76,17 @@
   "TRA_CUU_DICH_VU_CONG": "Tra cứu dịch vụ công",
 
   "KINH_CHAO_QUY_KHACH": "Kính chào quý khách",
-  "CHINH_QUYEN": "Chính quyền Văn Quán-Hà Đông-Hà Nội"
+  "CHINH_QUYEN": "Chính quyền Văn Quán - Hà Đông - Hà Nội",
+
+  "TIN_VANG_LAI": "Tin vãng lai",
+  "TIN_THUONG_TRU": "Tin thường trú",
+  "KHONG_CO_TIN_TUC_TRONG_MUC_NAY": "Không có tin tức trong mục này",
+  "NGUOI_GUI": "Người gửi",
+  "BOOKMARK_THANH_CONG": "Bookmark thành công",
+  "XOA_BOOKMARK_THANH_CONG": "Xóa bookmark thành công",
+
+  "TAO_PHAN_ANH_MOI": "Tạo phản ánh mới",
+  "PHAN_ANH_DA_GUI": "Phản ánh đã gửi",
+  "PHAN_ANH_QUANH_DAY": "Phản ánh quanh đây",
+  "NOI_DUNG_PHAN_ANH": "Nội dung phản ánh"
 }

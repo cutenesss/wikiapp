@@ -1,29 +1,27 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useEffect, useState } from "react"
-import { View, StyleSheet, ImageSourcePropType } from "react-native"
+import { View, StyleSheet, TouchableOpacity } from "react-native"
 import FastImage from "react-native-fast-image"
-import R from "@assets/R"
-import { WIDTH } from "@configs/functions"
-import { TouchableOpacity } from "react-native-gesture-handler"
+import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import { ImagePickerResponse, launchImageLibrary } from "react-native-image-picker"
 import { shallowEqual, useSelector } from "react-redux"
+
+import R from "@assets/R"
+import { WIDTH } from "@configs/functions"
+
 type Props = {
-  avartar?: ImageSourcePropType
   onImageChange?: (resimage: ImagePickerResponse) => void
   hideButtonPicker?: boolean
   containerStyle?: any
-  isAdmin?: boolean
 }
 
 const ProfileImage: React.FC<Props> = (props: Props) => {
   const userInfo = useSelector((state: any) => state.userReducers, shallowEqual)
-  const { onImageChange, hideButtonPicker, isAdmin, avartar } = props
+  const { onImageChange, hideButtonPicker } = props
   const [imageUri, setImageUri] = useState<string>()
 
   useEffect(() => {
-    if (!isAdmin) {
-      setImageUri(userInfo?.avatar)
-    }
+    setImageUri(userInfo?.avatar)
   }, [userInfo])
 
   const onPickImage = () => {
@@ -35,20 +33,16 @@ const ProfileImage: React.FC<Props> = (props: Props) => {
     })
   }
 
+  const imageAva = imageUri ? { uri: imageUri } : R.images.defaultAvatar
+
   return (
     <View style={[styles.container, props.containerStyle && props.containerStyle]}>
       {!hideButtonPicker && (
-        <View style={styles.button}>
-          <TouchableOpacity style={styles.viewChooseImage} onPress={onPickImage}>
-            {/* <FastImage
-              source={R.images.icCamera}
-              style={{ width: WIDTH(18), height: WIDTH(18) }}
-              resizeMode="stretch"
-            /> */}
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.button} onPress={onPickImage}>
+          <Icon size={WIDTH(20)} name="camera-plus" color={R.colors.primary} />
+        </TouchableOpacity>
       )}
-      {/* <FastImage source={imageAva} style={styles.image} /> */}
+      <FastImage source={imageAva} style={styles.image} />
     </View>
   )
 }
@@ -79,11 +73,5 @@ const styles = StyleSheet.create({
     borderRadius: WIDTH(88),
     height: WIDTH(88),
     width: WIDTH(88),
-  },
-  viewChooseImage: {
-    alignItems: "center",
-    height: WIDTH(36),
-    justifyContent: "center",
-    width: WIDTH(36),
   },
 })

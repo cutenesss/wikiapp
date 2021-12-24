@@ -7,5 +7,9 @@ const ScreenName = {
   MapEvent: "MapEvent",
   KPIStatus: "KPIStatus",
   ThongBao: "ThongBao",
+  Register: "Register",
+  News: "News",
+  NewsDetail: "NewsDetail",
+  Feedback: "Feedback",
 }
 export default ScreenName

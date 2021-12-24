@@ -1,7 +1,7 @@
 import React from "react"
-import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native"
+import { View, StyleSheet, TouchableOpacity } from "react-native"
 import { getWidth, HEIGHT, WIDTH } from "@configs/functions"
-import { Text } from "@ui-kitten/components"
+import { List, Text } from "@ui-kitten/components"
 
 import { ItemPager } from "@types"
 import { translate } from "@i18n"
@@ -18,7 +18,7 @@ const PageIndicator = (props: PageIndicatorProps) => {
   return (
     <View style={styles.container}>
       <ButtonAction title={translate("BO_QUA")} onPress={() => onChangePage(false)} />
-      <FlatList
+      <List
         data={data}
         keyExtractor={(item) => item?.title}
         scrollEnabled={false}
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     width: WIDTH(12),
   },
   list: {
+    backgroundColor: R.colors.transparent,
     flexGrow: 0,
   },
   txt: {

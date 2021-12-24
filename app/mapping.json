@@ -17,6 +17,9 @@
     "text-heading-5-font-size": 11,
     "text-heading-5-font-weight": "900",
     "text-heading-5-font-family": "Roboto",
+    "text-heading-6-font-size": 19,
+    "text-heading-6-font-weight": "900",
+    "text-heading-6-font-family": "Roboto",
 
     "text-subtitle-1-font-size": 31,
     "text-subtitle-1-font-weight": "400",
@@ -36,8 +39,8 @@
     "text-caption-1-font-weight": "400",
     "text-caption-1-font-family": "Roboto",
 
-    "text-label-font-size": 11,
-    "text-label-font-weight": "800",
+    "text-label-font-size": 13,
+    "text-label-font-weight": "700",
     "text-label-font-family": "Roboto"
   },
   "components": {}

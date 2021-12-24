@@ -8,11 +8,19 @@ import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 
 // UnAuth
-import Login from "@screens/Login"
-import Launching from "@screens/Launching"
+import Login from "@screens/Auth/Login"
+import Launching from "@screens/Auth/Launching"
+import Register from "@screens/Auth/Register"
 
 // Auth
 import Home from "@screens/Home"
+
+// news
+import News from "@screens/News"
+import NewsDetail from "@screens/News/NewsDetail"
+
+// Feedback
+import Feedback from "@screens/Feedback"
 
 // Utility
 import ViewPdf from "@screens/ViewPdf"
@@ -41,6 +49,10 @@ export type PrimaryParamList = {
   AppInstruction: undefined
   KPIStatus: undefined
   MapEvent: undefined
+  Register: undefined
+  News: undefined
+  NewsDetail: undefined
+  Feedback: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -58,9 +70,17 @@ export function MainNavigator() {
       <Stack.Screen name="Launching" component={Launching} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="AppInstruction" component={AppInstruction} />
+      <Stack.Screen name="Register" component={Register} />
 
       {/** home */}
       <Stack.Screen name="Home" component={Home} />
+
+      {/** News */}
+      <Stack.Screen name="News" component={News} />
+      <Stack.Screen name="NewsDetail" component={NewsDetail} />
+
+      {/** feedback */}
+      <Stack.Screen name="Feedback" component={Feedback} />
 
       {/** kpi */}
       <Stack.Screen name="KPIStatus" component={KPIStatus} />

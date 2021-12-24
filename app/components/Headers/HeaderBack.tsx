@@ -1,17 +1,10 @@
 import React from "react"
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  StyleProp,
-  ViewStyle,
-  TextStyle,
-} from "react-native"
+import { StyleSheet, TouchableOpacity, View, StyleProp, ViewStyle, TextStyle } from "react-native"
+import { Text } from "@ui-kitten/components"
 import Icon from "react-native-vector-icons/AntDesign"
 
 import R from "@assets/R"
-import { getFont, getLineHeight, getWidth, HEIGHT, WIDTH } from "@configs/functions"
+import { getWidth, HEIGHT, WIDTH } from "@configs/functions"
 import { goBack } from "@navigation/navigation-service"
 
 import CustomStatusBar from "@common/CustomStatusBar"
@@ -23,7 +16,7 @@ interface ItemProps {
   containerStyles?: StyleProp<ViewStyle>
   titleStyle?: StyleProp<TextStyle>
   backgroundColorStatusBar?: string
-  barStyle?: string
+  blackBarStyle?: boolean
   isStatusBarAndroidVisible?: boolean
 }
 const HeaderBack = ({
@@ -32,7 +25,7 @@ const HeaderBack = ({
   onButton,
   containerStyles,
   titleStyle,
-  barStyle,
+  blackBarStyle,
   backgroundColorStatusBar,
   isStatusBarAndroidVisible,
 }: ItemProps) => {
@@ -40,7 +33,7 @@ const HeaderBack = ({
     <View>
       <CustomStatusBar
         backgroundColor={backgroundColorStatusBar}
-        barStyle={barStyle}
+        blackBarStyle={blackBarStyle}
         isStatusBarAndroidVisible={isStatusBarAndroidVisible}
       />
       <View style={[styles.container, containerStyles && containerStyles]}>
@@ -51,9 +44,11 @@ const HeaderBack = ({
         >
           <Icon size={WIDTH(20)} name="arrowleft" color={R.colors.primary} />
         </TouchableOpacity>
-        <Text numberOfLines={2} style={[styles.title, titleStyle]}>
-          {title}
-        </Text>
+        <View style={styles.viewTxt}>
+          <Text numberOfLines={2} category={"p1"} style={[styles.title, titleStyle]}>
+            {title}
+          </Text>
+        </View>
         <View style={styles.rightView}>{childrenRight}</View>
       </View>
     </View>
@@ -73,7 +68,7 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    backgroundColor: R.colors.white,
+    backgroundColor: R.colors.black3,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: WIDTH(16),
@@ -90,14 +85,13 @@ const styles = StyleSheet.create({
     minWidth: WIDTH(36),
   },
   title: {
-    color: R.colors.gray9,
-    fontFamily: R.fonts.Roboto,
-    fontSize: getFont(16),
+    color: R.colors.white,
     fontWeight: "700",
-    left: getWidth() / 2 - WIDTH(115),
-    lineHeight: getLineHeight(24),
-    position: "absolute",
     textAlign: "center",
+  },
+  viewTxt: {
+    left: getWidth() / 2 - WIDTH(120),
+    position: "absolute",
     width: WIDTH(250),
   },
 })
