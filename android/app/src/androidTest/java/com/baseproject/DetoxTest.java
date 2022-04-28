@@ -1,5 +1,5 @@
-// Replace "com.ais.ezlife" here and below with your app's package name from the top of MainActivity.java
-package com.ais.ezlife;
+// Replace "com.cmc.wikiapp" here and below with your app's package name from the top of MainActivity.java
+package com.cmc.wikiapp;
 
 import com.wix.detox.Detox;
 import com.wix.detox.config.DetoxConfig;
@@ -25,7 +25,7 @@ public class DetoxTest {
         DetoxConfig detoxConfig = new DetoxConfig();
         detoxConfig.idlePolicyConfig.masterTimeoutSec = 90;
         detoxConfig.idlePolicyConfig.idleResourceTimeoutSec = 60;
-        detoxConfig.rnContextLoadTimeoutSec = (com.ais.ezlife.BuildConfig.DEBUG ? 180 : 60);
+        detoxConfig.rnContextLoadTimeoutSec = (com.cmc.wikiapp.BuildConfig.DEBUG ? 180 : 60);
 
         Detox.runTests(mActivityRule, detoxConfig);
     }

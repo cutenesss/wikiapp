@@ -3,7 +3,7 @@ import colors from "../assets/colors"
 
 const themes = {
   shadow: {
-    shadowColor: "#000",
+    shadowColor: colors.black0,
     shadowOffset: {
       width: 0,
       height: 1,

@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.ais.ezlife",
+  "applicationId": "com.cmc.wikiapp",
   "variantName": "processReleaseResources",
   "elements": [
     {

@@ -1,33 +1,5 @@
-export * from "./UserType"
-export * from "./ClassType"
-export interface IBodyUploadFile {
-  uri: string
-  type: string
-  name: string
-}
-
-export interface IBodyTime {
-  ngay: number
-  thang: number
-  nam: number
-}
-
-export interface IResponseUploadFile {
-  data: {
-    url: string
-    file: {
-      filename: string
-      public: true
-      mimetype: string
-      path: string
-      url: string
-    }
-  }
-}
-
-export interface ItemPager {
-  title: string
-  content: string
-  icon: any
-  color: string
+export interface BodyGetPageable {
+  page: number
+  limit: number
+  cond?: any
 }

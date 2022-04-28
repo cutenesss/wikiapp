@@ -1,13 +1,19 @@
 const ScreenName = {
-  Launching: "Launching",
   ViewPdf: "ViewPdf",
-  Home: "Home",
-  Login: "Login",
+
   AppInstruction: "AppInstruction",
+  Launching: "Launching",
+  Login: "Login",
+  Register: "Register",
+
+  PersonalInformation: "PersonalInformation",
+  ChangePassword: "ChangePassword",
+
+  Home: "Home",
+  AuthorityInfo: "AuthorityInfo",
   MapEvent: "MapEvent",
   KPIStatus: "KPIStatus",
   ThongBao: "ThongBao",
-  Register: "Register",
   News: "News",
   NewsDetail: "NewsDetail",
   Feedback: "Feedback",

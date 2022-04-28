@@ -1,26 +1,21 @@
 import { Dimensions, Alert, Linking } from "react-native"
 import { initialWindowMetrics } from "react-native-safe-area-context"
-import moment from "moment"
 import InAppBrowser from "react-native-inappbrowser-reborn"
 import { appStore } from "../stores/configureStore"
 
-import { Student, TruongThoiGianDiemDanhBody } from "@types"
 import { changeDialogConfirmContent, changeDialogContent } from "../redux/actions/dialogStateAction"
-import { DAY_BY_MILLISECONDS, TRANG_THAI_DIEM_DANH } from "./constant"
 import { colors } from "@assets"
 
 const { width, height } = Dimensions.get("window")
 const { width: widthScreen, height: heightScreen } = Dimensions.get("screen")
 const deviceHeight = height - (initialWindowMetrics?.insets.top ?? 0)
-export const responsiveHeight = (h: number): number => height * (h / 100)
 export const WIDTH = (w: number): number => width * (w / 375)
 export const HEIGHT = (h: number): number => deviceHeight * (h / 812)
 export const WIDTH_SCREEN = (w: number): number => widthScreen * (w / 375)
 export const HEIGHT_SCREEN = (h: number): number => heightScreen * (h / 812)
+export const getLineHeight = (f: number): number => f
 export const getWidth = (): number => width
 export const getHeight = (): number => height
-export const getLineHeight = (f: number): number => f
-export const getHighAbsolute = (h: number): number => height * (h / 812)
 export const getInsetVertical = (): number =>
   (initialWindowMetrics?.insets.top || 0) + (initialWindowMetrics?.insets.bottom || 0)
 
@@ -39,25 +34,6 @@ export function RFValue(fontSize: number) {
       (deviceHeight ?? 0)) /
     getHeight()
   return Math.round(heightPercent)
-}
-
-export const getFileExtintion = (filePath = ""): string | undefined => {
-  return filePath?.split(".").pop()
-}
-export const getFileName = (filePath = ""): string | undefined => {
-  return filePath?.split(".")?.[0] || "fileName"
-}
-
-export const isLocalFile = (fileUri) => {
-  const subStr = fileUri?.substring(0, 5)
-  if (subStr === "https" || !fileUri) {
-    return false
-  }
-  return true
-}
-
-export const customFormatDate = (dateString = 0) => {
-  return moment(dateString).format("D.M.YYYY")
 }
 
 export const validatePhone = (str: string) => {
@@ -88,12 +64,6 @@ export const popupAlert = (title: string, msg: string, onPress = null, onPressCa
     changeDialogConfirmContent({ isVisible: true, title, content: msg, onPress, onPressCancel }),
   )
 }
-
-export const formatVND = (price: number) => {
-  const vnd = price?.toFixed(0)?.replace(/(\d)(?=(\d{3})+$)/g, "$1.")
-  return `${vnd} VNĐ`
-}
-
 export const hideEmail = (email?: string) => {
   if (!email || email.length < 3) return "*****"
   else {
@@ -104,15 +74,6 @@ export const hideEmail = (email?: string) => {
     }
     return hidedEmail
   }
-}
-
-export const getDriverFileId = (url: string) => {
-  // console.log("url", url)
-  return url?.match(/[-\w]{25,}/)?.[0]
-}
-
-export const getFileRunable = (fileID: string) => {
-  return `https://docs.google.com/uc?export=download&id=${fileID || ""}`
 }
 
 /**
@@ -140,19 +101,6 @@ export const upperCaseFirstLetterEachWord = (sentence: string) => {
     )
     .join(" ")
     .trim()
-}
-
-export const getNgayDauTuanVaCuoiTuan = () => {
-  const ngayHienTai = moment(new Date()).format("YYYY-MM-DD")
-  const thuHienTai = new Date().getDay()
-  const ngayDauTuan =
-    new Date(`${ngayHienTai} 00:00`).getTime() - (thuHienTai - 1) * DAY_BY_MILLISECONDS
-  const ngayCuoiTuan =
-    new Date(`${ngayHienTai} 23:59`).getTime() + (7 - thuHienTai) * DAY_BY_MILLISECONDS
-  return {
-    ngayDauTuan,
-    ngayCuoiTuan,
-  }
 }
 
 export const getRandomNumberBetween = (min: number, max: number) => {

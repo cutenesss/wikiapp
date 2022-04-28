@@ -7,7 +7,7 @@ if (__DEV__) {
   NODE_DEV = "production"
 }
 
-const serverURL = "https://ezlife.vn/ezCityAPIs/" // development
+const serverURL = "https://en.wikipedia.org/" // development
 // const serverURL ="http://165.22.108.71:3000" // production
 
 const socketURL = "http://165.22.108.71:8888" // development

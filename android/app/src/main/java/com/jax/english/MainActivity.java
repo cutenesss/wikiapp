@@ -1,4 +1,4 @@
-package com.ais.ezlife;
+package com.cmc.wikiapp;
 
 import com.facebook.react.ReactActivity;
 

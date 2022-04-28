@@ -16,7 +16,6 @@ import { connect } from "react-redux"
 import R from "../../assets/R"
 import { getHeight, getWidth, HEIGHT, WIDTH } from "../../configs/functions"
 import { translate } from "../../i18n"
-import { defaultBody } from "@configs/constant"
 
 type Props = any
 type State = {

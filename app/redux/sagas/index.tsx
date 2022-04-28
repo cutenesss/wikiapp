@@ -1,8 +1,6 @@
 import { all, fork, AllEffect, ForkEffect } from "redux-saga/effects"
-import getUserInfor from "./users"
-import getInitState from "./initState"
-import getAuthorityInfoSaga from "./authorityInfo"
+import getListSearch from "./search"
 
-export default function* rootSaga(): Generator<AllEffect<ForkEffect<void>>, void, unknown> {
-  yield all([fork(getUserInfor), fork(getInitState), fork(getAuthorityInfoSaga)])
+export default function * rootSaga(): Generator<AllEffect<ForkEffect<void>>, void, unknown> {
+  yield all([fork(getListSearch)])
 }

@@ -50,7 +50,6 @@ const colors = {
   white1p: "rgba(255, 255, 255, 0.1)",
   white5p: "rgba(255, 255, 255, 0.5)",
   white75p: "rgba(255, 255, 255, 0.75)",
-  caption: "rgba(255, 255, 255, 0.4)",
   whiteF4: "#F4F4F4",
   whiteFC: "#FBFCFD",
   white0084: "#0084ff",

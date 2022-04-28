@@ -19,9 +19,6 @@ import CustomConfirmDialog from "@common/CustomConfirmDialog"
 // import env from "./env"
 import R from "./assets/R"
 // import NotificationFirebase from './helpers/NotificationFirebase'
-import { getUserProfile } from "./redux/actions/userAction"
-
-import { defaultBody } from "@configs/constant"
 
 import { reset } from "@navigation/navigation-service"
 
@@ -110,5 +107,4 @@ function mapStateToProps(state) {
   return {}
 }
 export default connect<any, any, any>(mapStateToProps, {
-  getUserProfile,
 })(RootView)

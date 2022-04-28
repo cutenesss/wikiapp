@@ -1,4 +1,4 @@
-package com.ais.ezlife.generated;
+package com.cmc.wikiapp.generated;
 
 import java.util.Arrays;
 import java.util.List;

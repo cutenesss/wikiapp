@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "717817327699",
-    "project_id": "ezlife-cdit",
-    "storage_bucket": "ezlife-cdit.appspot.com"
+    "project_id": "wikiapp",
+    "storage_bucket": "wikiapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:717817327699:android:03131344f004803ea796a6",
         "android_client_info": {
-          "package_name": "com.ais.ezlife"
+          "package_name": "com.cmc.wikiapp"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "717817327699-ig5njc13t141bg5vii034v62re97fudf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ais.ezlife",
+            "package_name": "com.cmc.wikiapp",
             "certificate_hash": "83fd5b659ffd7b2766dbdd9207ae215ae49c55a5"
           }
         },

@@ -4,6 +4,7 @@ import { Text } from "@ui-kitten/components"
 
 import { translate } from "../../i18n"
 import R from "../../assets/R"
+import { HEIGHT } from "@configs/functions"
 
 type Props = {
   customStyle?: ViewStyle
@@ -25,7 +26,8 @@ export default ItemTrong
 const styles = StyleSheet.create({
   container: {
     alignSelf: "center",
-    backgroundColor: R.colors.whitef2,
+    backgroundColor: R.colors.transparent,
+    marginVertical: HEIGHT(12),
   },
   text: {
     textAlign: "center",

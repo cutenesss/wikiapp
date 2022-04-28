@@ -1,8 +1,8 @@
-import { USER_ACTION } from "./actionTypes"
+import { SEARCH_ACTION } from "./actionTypes"
 
-export const getUserProfile = (session: string) => {
+export const searchListWiki = (payload: {word: string, offset: number}) => {
   return {
-    type: USER_ACTION.USER_FETCH_REQUESTED,
-    session,
+    type: SEARCH_ACTION.SEARCH_FETCH_REQUESTED,
+    payload,
   }
 }

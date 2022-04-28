@@ -2,7 +2,7 @@ import React from "react"
 import { View, StyleSheet, Image, StatusBar, TouchableOpacity } from "react-native"
 import { Modal, Text } from "@ui-kitten/components"
 import R from "@assets/R"
-import { WIDTH, HEIGHT, getFont, getLineHeight } from "@configs/functions"
+import { WIDTH, HEIGHT, getFont } from "@configs/functions"
 type Props = {
   visible: boolean
   title: string
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     color: R.colors.primary,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(16),
-    lineHeight: getLineHeight(24),
   },
   rightButton: {
     alignItems: "center",
@@ -93,7 +92,6 @@ const styles = StyleSheet.create({
     color: R.colors.white,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(16),
-    lineHeight: getLineHeight(24),
   },
   title: {
     fontSize: 16,

@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, TextStyle } from "react-native"
 import FastImage, { Source, ImageStyle } from "react-native-fast-image"
 import { Modal, Text } from "@ui-kitten/components"
 import R from "@assets/R"
-import { WIDTH, HEIGHT, getFont, getLineHeight } from "@configs/functions"
+import { WIDTH, HEIGHT, getFont } from "@configs/functions"
 import { translate } from "@i18n"
 type Props = {
   visible: boolean
@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     color: R.colors.gray9,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(16),
-    lineHeight: getLineHeight(24),
     marginBottom: HEIGHT(32),
     textAlign: "center",
   },
@@ -106,19 +105,16 @@ const styles = StyleSheet.create({
     color: R.colors.white,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(18),
-    lineHeight: getLineHeight(24),
   },
   textCancel: {
     color: R.colors.primary,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(18),
-    lineHeight: getLineHeight(24),
   },
   title: {
     color: R.colors.gray9,
     fontFamily: R.fonts.Roboto,
     fontSize: getFont(20),
-    lineHeight: getLineHeight(28),
     marginBottom: HEIGHT(8),
     textAlign: "center",
   },
